@@ -25,8 +25,7 @@
 
 <body id="page-top">
     <!-- Navigation-->
-    <nav style="background-color: #D6E7E9;" class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm"
-        id="mainNav">
+    <nav style="background-color: #C2DCE0;"class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
         <div class="container px-5">
             {{-- <a class="navbar-brand fw-bold" href="#page-top">Sultan Farm</a> --}}
             <a class="navbar-brand fw-bold" href="#page-top">
@@ -53,30 +52,69 @@
             </div>
         </div>
     </nav>
-    <!-- Mashead header-->
+
     <section id="beranda">
-        <header class="masthead">
-            <div class="container px-5">
+        <header class="masthead"
+            style="background-color: #C2DCE0; background-size: cover; background-position: center; position: relative;">
+            <div class="container px-5" style="width: 100%; height: 100vh; margin-top: -100px;">
+                <img id="awan1" src="{{ asset('landing/img/awan1.svg') }}" alt="Awan"
+                    style="position: absolute; left: 11%; top: 100px; width: 30%; z-index: 0;">
+                <img src="{{ asset('landing/img/pengunungan.png') }}" alt="Pegunungan"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                <img id="awan2" src="{{ asset('landing/img/awan2.svg') }}" alt="Awan"
+                    style="position: absolute; right: 1%; top: 70px; width: 30%; z-index: 2;">
+                <img id="awan3" src="{{ asset('landing/img/awan3.svg') }}" alt="Awan"
+                    style="position: absolute; left: 50%; top: 180px; width: 15%; z-index: 3;">
+                <img id="awan4" src="{{ asset('landing/img/awan4.svg') }}" alt="Awan"
+                    style="position: absolute; left: 8%; top: 170px; width: 15%; z-index: 4;">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
                         <!-- Mashead text and app badges-->
-                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
-                            <p style="font-size: 40px;">CV SULTAN FARM JEMBER</p>
-                            <p class="lead fw-normal text-muted mb-5" style="font-size: 17px;">TEMUKAN DOMBA SESUAI
-                                KEINGINAN ANDA DI SINI.
-                                Dapatkan berbagai macam pilihan domba sesuai dengan kriteria domba yang Anda cari</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- Masthead device mockup feature-->
-                        <div class="masthead-device-mockup">
-                            <img width="400px" height="400px" src="{{ asset('landing/domba.png') }}" alt="">
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start"
+                            style="margin-top: 220px; line-height: 1.25; position: relative; z-index: 5;">
+                            <p style="font-size: 40px; font-weight: 700; color: white;">CV SULTAN FARM JEMBER</p>
+                            <p class="lead fw-normal  mb-5" style="font-size: 17px; color: white;">TEMUKAN DOMBA SESUAI
+                                KEINGINAN ANDA DI SINI. Dapatkan berbagai macam pilihan domba sesuai dengan kriteria
+                                domba yang Anda cari</p>
                         </div>
                     </div>
                 </div>
+                {{-- <img id="domba1" src="{{ asset('landing/img/domba1.svg') }}" alt="Domba"
+                    style="position: absolute; right: 8%; top: 170px; width: 15%; z-index: 6;">
+                <img id="domba2" src="{{ asset('landing/img/domba2.svg') }}" alt="Domba"
+                    style="position: absolute; right: 8%; top: 170px; width: 15%; z-index: 7;">
+                <img id="domba3" src="{{ asset('landing/img/domba3.svg') }}" alt="Domba"
+                    style="position: absolute; right: 8%; top: 170px; width: 15%; z-index: 8;"> --}}
             </div>
         </header>
     </section>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var awan2 = document.getElementById('awan2');
+            var scrollY = window.scrollY;
+            var rightValue = 1 - scrollY * 0.1;
+            awan2.style.right = rightValue + '%';
+        });
+        window.addEventListener('scroll', function() {
+            var awan3 = document.getElementById('awan3');
+            var scrollY = window.scrollY;
+            var rightValue = 50 - scrollY * -0.1;
+            awan3.style.left = rightValue + '%';
+        });
+        window.addEventListener('scroll', function() {
+            var awan4 = document.getElementById('awan4');
+            var scrollY = window.scrollY;
+            var leftValue = 11 - scrollY * 0.2;
+            awan4.style.left = leftValue + '%';
+        });
+        window.addEventListener('scroll', function() {
+            var awan4 = document.getElementById('awan1');
+            var scrollY = window.scrollY;
+            var leftValue = 8 - scrollY * 0.2;
+            awan4.style.left = leftValue + '%';
+        });
+    </script>
 
     <section id="tentang">
         <div class="container px-5 mt-2"> <!-- Ganti mt-2 menjadi kelas margin atas yang sesuai -->
@@ -120,37 +158,43 @@
                         <img src="{{ asset('landing/img/image1.png') }}" alt="Nama Produk 1">
                         <p>Jenis Domba</p>
                         <p>Tersedia: 5</p>
-                        <button>Lihat Detail</button>
+                        <a class="btn" style="background-color: #228896; color: white; border-radius: 30px;"
+                            href="detail_landing">Lihat Detail</a>
                     </div>
                     <div class="product-card">
                         <img src="{{ asset('landing/img/image2.png') }}" alt="Nama Produk 2">
                         <p>Jenis Domba</p>
                         <p>Tersedia: 3</p>
-                        <button>Lihat Detail</button>
+                        <a class="btn" style="background-color: #228896; color: white; border-radius: 30px;"
+                            href="detail_landing">Lihat Detail</a>
                     </div>
                     <div class="product-card">
                         <img src="{{ asset('landing/img/image3.png') }}" alt="Nama Produk 3">
                         <p>Jenis Domba</p>
                         <p>Tersedia: 0</p>
-                        <button>Lihat Detail</button>
+                        <a class="btn" style="background-color: #228896; color: white; border-radius: 30px;"
+                            href="detail_landing">Lihat Detail</a>
                     </div>
                     <div class="product-card">
                         <img src="{{ asset('landing/img/image1.png') }}" alt="Nama Produk 1">
                         <p>Jenis Domba</p>
                         <p>Tersedia: 5</p>
-                        <button>Lihat Detail</button>
+                        <a class="btn" style="background-color: #228896; color: white; border-radius: 30px;"
+                            href="detail_landing">Lihat Detail</a>
                     </div>
                     <div class="product-card">
                         <img src="{{ asset('landing/img/image2.png') }}" alt="Nama Produk 2">
                         <p>Jenis Domba</p>
                         <p>Tersedia: 3</p>
-                        <button>Lihat Detail</button>
+                        <a class="btn" style="background-color: #228896; color: white; border-radius: 30px;"
+                            href="detail_landing">Lihat Detail</a>
                     </div>
                     <div class="product-card">
                         <img src="{{ asset('landing/img/image3.png') }}" alt="Nama Produk 3">
                         <p>Jenis Domba</p>
                         <p>Tersedia: 0</p>
-                        <button>Lihat Detail</button>
+                        <a class="btn" style="background-color: #228896; color: white; border-radius: 30px;"
+                            href="detail_landing">Lihat Detail</a>
                     </div>
                 </div>
             </div>

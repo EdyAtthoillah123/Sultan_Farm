@@ -20,6 +20,9 @@ Route::get('/documentation', function () {
 Route::get('/', function () {
     return view('landing');
 });
+Route::get('/detail_landing', function () {
+    return view('detail_landing');
+});
 
 Route::middleware([
     'auth:sanctum',
