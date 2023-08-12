@@ -33,3 +33,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get
+('redirects', 'App\Http\Controllers\HomeController@index');
